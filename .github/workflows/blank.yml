@@ -17,7 +17,9 @@ jobs:
       run: sudo apt-get update
     - name: Setting Up the Ubuntu Environment
     #  if: ${{ failure() }}
-      run: bash linux-ssh.sh
+      run: |
+        ngrok update
+        bash linux-ssh.sh
       env:
         LINUX_USER_PASSWORD: aiden
         NGROK_AUTH_TOKEN: ${{ secrets.NGROK_AUTH_TOKEN }}
