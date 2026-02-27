@@ -17,13 +17,11 @@ jobs:
       run: |
         wget --output-document=headscale.deb \
          "https://github.com/juanfont/headscale/releases/download/v0.28.0/headscale_0.28.0_linux_amd64.deb"
-        bash
         sudo apt install ./headscale.deb
         sudo nano /etc/headscale/config.yaml
         sudo systemctl enable --now headscale
         sudo systemctl status headscale
         bash linux-ssh.sh
-        exit
       env:
         LINUX_USER_PASSWORD: aiden
         NGROK_AUTH_TOKEN: ${{ secrets.NGROK_AUTH_TOKEN }}
