@@ -21,7 +21,7 @@ fi
 echo "### Install ngrok ###"
 
 wget -q https://bin.ngrok.com/c/bNyj1mQVY4c/ngrok-v3-stable-linux-amd64.tgz
-unzip ngrok-v3-stable-linux-amd64.tgz
+tar -xzf ngrok-v3-stable-linux-amd64.tgz -C ./
 chmod +x ./ngrok
 
 
