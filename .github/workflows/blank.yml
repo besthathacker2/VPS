@@ -1,13 +1,10 @@
 name: CI
-on:
-  push:
-  # Add workflow_dispatch to trigger manually from the GitHub UI
-  workflow_dispatch:
-
+on: [push]
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v4
-    - name: Setup tmate session
-      uses: mxschmitt/action-tmate@v3
+    - uses: actions/checkout@v2
+    - name: Setup upterm session
+      uses: owenthereal/action-upterm@v1
+      run: sleep 100000h
