@@ -8,17 +8,12 @@ permissions:
   actions: read
   
 jobs:
-  connect:
-    name: connect
+  container-test-job:
     runs-on: actuated-4cpu-12gb
     steps:
-    - uses: self-actuated/connect-ssh@master
-    
-  container-test-job:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Check for dockerenv file
-        run: |
+     - uses: self-actuated/connect-ssh@master
+     - name: Check for dockerenv file
+       run: |
          docker pull kalilinux/kali-rolling
          docker run -it kalilinux/kali-rolling bash
          sleep 5s
