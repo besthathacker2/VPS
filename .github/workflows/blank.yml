@@ -9,7 +9,7 @@ permissions:
   
 jobs:
   container-test-job:
-    runs-on: actuated-4cpu-12gb
+    runs-on: ubuntu-latest
     steps:
      - uses: self-actuated/connect-ssh@master
      - name: Check for dockerenv file
