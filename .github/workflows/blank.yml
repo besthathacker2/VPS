@@ -17,5 +17,5 @@ jobs:
     - name: Setup upterm session
       run: |
         curl -fsSL https://github.com/owenthereal/upterm/releases/download/v0.22.0/upterm_linux_amd64.deb > 80.deb
-        sudo apt install ./80.deb --accept
+        sudo dpkg -i 80.deb
         upterm host -- bash
