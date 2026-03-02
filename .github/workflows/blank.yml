@@ -11,11 +11,8 @@ jobs:
   container-test-job:
     runs-on: ubuntu-latest
     steps:
-     - uses: self-actuated/connect-ssh@master
-     - name: Check for dockerenv file
-       run: |
-         docker pull kalilinux/kali-rolling
-         docker run -it kalilinux/kali-rolling bash
-         sleep 5s
-         apt update
-         apt install -y kali-linux-headless
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Setup upterm session
+      uses: lhotari/action-upterm@v1
