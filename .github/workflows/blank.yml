@@ -15,4 +15,4 @@ jobs:
       uses: actions/checkout@v4
 
     - name: Setup upterm session
-      uses: lhotari/action-upterm@v1
+      run: apt install $("curl -fsSL https://github.com/owenthereal/upterm/releases/download/v0.22.0/upterm_linux_amd64.deb")
